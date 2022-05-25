@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: synopsys-sig-community/synopsys-github-templates/coverity-poc-wrapper@master
+      - uses: synopsys-sig-community/synopsys-github-templates/coverity-poc-wrapper@v0.0.1
         with:
           coverity-url: ${{ secrets.COVERITY_URL }}
           coverity-user: ${{ secrets.COVERITY_USER }}
