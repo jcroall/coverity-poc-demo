@@ -1,0 +1,30 @@
+name: Coverity with Self-Hosted Runner
+on:
+  push:
+    branches: [ master, main ]
+
+  pull_request:
+    branches: [ master, main ]
+
+jobs:
+  build:
+    runs-on: ununtu-latest
+
+    env:
+      COVERITY_CHECKERS: --webapp-security
+      COVERITY_URL: ${{ secrets.COVERITY_URL }}
+      COV_USER: ${{ secrets.COVERITY_USER }}
+      COVERITY_PASSPHRASE: ${{ secrets.COVERITY_PASSPHRASE }}
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: synopsys-sig-community/synopsys-github-templates/coverity-poc-wrapper@master
+        with:
+          coverity-url: ${{ secrets.COVERITY_URL }}
+          coverity-user: ${{ secrets.COVERITY_USER }}
+          coverity-passphrase: ${{ secrets.COVERITY_PASSPHRASE }}
+          coverity-project-name: ${{ github.event.repository.name }}
+          coverity-checker-options: --webapp-security
+          create-stream-and-project: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
