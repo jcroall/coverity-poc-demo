@@ -24,6 +24,7 @@ jobs:
           coverity-url: ${{ secrets.COVERITY_URL }}
           coverity-user: ${{ secrets.COVERITY_USER }}
           coverity-passphrase: ${{ secrets.COVERITY_PASSPHRASE }}
+          coverity-license: ${{ secrets.COVERITY_LICENSE }}
           coverity-project-name: ${{ github.event.repository.name }}
           coverity-checker-options: --webapp-security
           create-stream-and-project: true
