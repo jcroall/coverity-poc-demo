@@ -28,4 +28,5 @@ jobs:
           coverity-project-name: ${{ github.event.repository.name }}
           coverity-checker-options: --webapp-security
           create-stream-and-project: true
+          security-gate-view-name: "High and Medium Severity"
           github-token: ${{ secrets.GITHUB_TOKEN }}
