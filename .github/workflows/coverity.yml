@@ -26,7 +26,7 @@ jobs:
           coverity-license-creds: ${{ secrets.COVERITY_LICENSE_CREDS }}
 
           coverity-project-name: ${{ github.event.repository.name }}
-          coverity-build-command: mvn package
+          build-command: mvn package
           coverity-checker-options: --webapp-security
           create-stream-and-project: true
           security-gate-view-name: "High and Medium Severity"
