@@ -13,12 +13,17 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: synopsys-sig-community/synopsys-github-templates/coverity-poc-wrapper@v0.0.1
+      - uses: synopsys-sig-community/synopsys-github-templates/coverity@v0.0.2-poc
         with:
           coverity-url: ${{ secrets.COVERITY_URL }}
           coverity-user: ${{ secrets.COVERITY_USER }}
           coverity-passphrase: ${{ secrets.COVERITY_PASSPHRASE }}
-          coverity-license: ${{ secrets.COVERITY_LICENSE }}
+
+          coverity-download-url: https://github.com/synopsys-sig-community/synopsys-github-templates/releases/download/v0.0.1/cov-analysis-linux64-2021.12.1-poc-nolicense.tgz
+          coverity-download-creds: ${{ secrets.COVERITY_DOWNLOAD_CREDS }}
+          coverity-license-url: https://thirteen.community/private/license.dat
+          coverity-license-creds: ${{ secrets.COVERITY_LICENSE_CREDS }}
+
           coverity-project-name: ${{ github.event.repository.name }}
           coverity-checker-options: --webapp-security
           create-stream-and-project: true
