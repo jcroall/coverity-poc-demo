@@ -25,8 +25,21 @@ jobs:
           coverity-license-url: https://thirteen.community/private/license.dat
           coverity-license-creds: ${{ secrets.COVERITY_LICENSE_CREDS }}
 
+          coverity-build-command: mvn package
           coverity-project-name: ${{ github.event.repository.name }}
           coverity-checker-options: --webapp-security
+
+          # Make sure to give "Project Admin" and "Stream Admin" rights to your
+          # COVERITY_USER in Coverity Connect before enabling this feature.
           create-stream-and-project: true
+          # Make sure to create a saved view of this name and test it interatcively
+          # in Coverity Connect before enabling this feature.
           security-gate-view-name: "High and Medium Severity"
           github-token: ${{ secrets.GITHUB_TOKEN }}
+
+    - uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: analysis-log
+        path: idir/output/analysis-log.txt
+
