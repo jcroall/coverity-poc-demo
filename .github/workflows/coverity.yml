@@ -19,7 +19,7 @@ jobs:
           coverity-user: ${{ secrets.COVERITY_USER }}
           coverity-passphrase: ${{ secrets.COVERITY_PASSPHRASE }}
 
-          coverity-download-url: POC
+          coverity-download-url: synopsys-sig-community/synopsys-github-bits
           coverity-download-creds: ${{ secrets.COVERITY_DOWNLOAD_CREDS }}
           coverity-download-version: 2022.3.1
           coverity-license-url: https://poc60.coverity.synopsys.com/downloadFile.htm?fn=license.dat
