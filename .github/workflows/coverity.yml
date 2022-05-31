@@ -22,7 +22,7 @@ jobs:
           coverity-download-url: POC
           coverity-download-creds: ${{ secrets.COVERITY_DOWNLOAD_CREDS }}
           coverity-download-version: 2022.3.1
-          coverity-license-url: https://poc55.coverity.synopsys.com/downloadFile.htm?fn=license.dat
+          coverity-license-url: https://poc60.coverity.synopsys.com/downloadFile.htm?fn=license.dat
           coverity-license-creds: ${{ secrets.COVERITY_LICENSE_CREDS }}
 
           coverity-project-name: ${{ github.event.repository.name }}
