@@ -19,11 +19,10 @@ jobs:
           coverity-user: ${{ secrets.COVERITY_USER }}
           coverity-passphrase: ${{ secrets.COVERITY_PASSPHRASE }}
 
-          #coverity-download-url: https://github.com/synopsys-sig-community/synopsys-github-templates/releases/download/v0.0.1
-          coverity-download-url: https://github.com/synopsys-sig-community/synopsys-github-bits/releases/download/v2021.12.1
-          coverity-download-version: 2022.3.1
+          coverity-download-url: POC
           coverity-download-creds: ${{ secrets.COVERITY_DOWNLOAD_CREDS }}
-          coverity-license-url: https://thirteen.community/private/license.dat
+          coverity-download-version: 2022.3.1
+          coverity-license-url: https://poc55.coverity.synopsys.com/downloadFile.htm?fn=license.dat
           coverity-license-creds: ${{ secrets.COVERITY_LICENSE_CREDS }}
 
           coverity-project-name: ${{ github.event.repository.name }}
