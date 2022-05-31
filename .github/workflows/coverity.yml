@@ -24,7 +24,7 @@ jobs:
           coverity-download-url: synopsys-sig-community/synopsys-github-bits
           coverity-download-creds: ${{ secrets.COVERITY_DOWNLOAD_CREDS }}
           coverity-download-version: 2022.3.1
-          coverity-license-url: https://poc60.coverity.synopsys.com/downloadFile.htm?fn=license.dat
+          coverity-license-url: https://testing.coverity.synopsys.com/
           coverity-license-creds: ${{ secrets.COVERITY_LICENSE_CREDS }}
 
           # Required to identify new defects
@@ -36,6 +36,6 @@ jobs:
           # Optional
           create-stream-and-project: true
           # Optional
-          security-gate-view-name: "High and Medium Severity"
+          #security-gate-view-name: "High and Medium Severity"
           # Required for GitHub
           github-token: ${{ secrets.GITHUB_TOKEN }}
