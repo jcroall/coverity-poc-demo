@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: synopsys-sig-community/synopsys-github-templates/coverity@v0.0.2-poc
+      - uses: synopsys-sig-community/synopsys-github-templates/coverity@v0.0.1-shanko1
         with:
           # Required to identify new defects and commit full results
           coverity-url: ${{ secrets.COVERITY_URL }}
